@@ -20,8 +20,6 @@ Greatest_Inc_Month = ""
 #Variable to track the greatest month-over-motnh profit decrease and the corresponding month it took place.
 Greatest_Dec_Amt = 0
 Greatest_Dec_Month = ""
-#List variable that will house all of the calculated data from the .CSV file
-financial_analysis = []
 
 #code to open the .CSV file and move past the header row.
 with open(budget_csv,'r') as csvfile:
@@ -61,7 +59,7 @@ with open(budget_csv,'r') as csvfile:
             else:
                 Greatest_Dec_Amt = Greatest_Dec_Amt
                 Greatest_Dec_Month = Greatest_Dec_Month        
-#adding the verbiage and corresponding data to the summary list:
+#adding the verbiage and corresponding data to the summary list variable:
 summary = ["Total months: " + str(num_months),
     "Total: $" + str(total_profit),
     "Average change: $"+str(round(float(monthly_profit / int(num_months-1)),2)),
